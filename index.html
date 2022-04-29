@@ -31,19 +31,13 @@
   <body>
     <a-scene mindar-image="imageTargetSrc: https://josemanuel9626.github.io/Looteart-MindAR/zelda-mindar/targets.mind;" vr-mode-ui="enabled: false" 
       device-orientation-permission-ui="enabled: false">
+      <a-assets>
+      <video id="vid" autoplay="false" loop="true" src="1.mp4"></video>
+      </a-assets>
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
       <a-entity mindar-image-target="targetIndex: 0">
+      <a-video src="#1.mp4" width="16" height="9" position="0 0 -20"></a-video>
       </a-entity>
-    </a-scene>
-    <a-assets>
-	    <a-scene
-        vr-mode-ui="enabled: false;"
-        renderer='antialias: true; alpha: true; precision: mediump;'
-        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-            <video src="1.mp4"
-                preload="auto" id="vid" response-type="arraybuffer" loop
-                crossorigin webkit-playsinline autoplay playsinline>
-            </video>
-        </a-assets>
+    </a-scene>   
   </body>
 </html>
