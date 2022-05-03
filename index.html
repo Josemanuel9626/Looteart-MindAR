@@ -6,24 +6,25 @@
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js"></script>
     
     <script>
-    window.onload = function() {
-        AFRAME.registerComponent('videohandler', {
-            init: function () {
-                var marker = this.el;
-
-                this.vid = document.querySelector("zelda");
-
-                marker.addEventListener('markerFound', function() {
+  AFRAME.registerComponent('vidhandler', {
+        // ...
+        init: function () {
+            this.toggle = false;
+            this.vid = document.querySelector("#zelda")
+            this.vid.pause();
+        },
+        tick: function () {
+            if (this.el.object3D.visible == true) {
+                if (!this.toggle) {
+                    this.toggle = true;
                     this.vid.play();
-                }.bind(this));
-
-		marker.addEventListener('markerLost', function() {
-			this.vid.pause();
-			this.vid.currentTime = 0;
-		}.bind(this));
+                }
+            } else {
+                this.toggle = false;
+                this.vid.pause();
             }
-        });
-    };
+        }
+    });
 </script>
     
 </head>
