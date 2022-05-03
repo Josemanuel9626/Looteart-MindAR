@@ -11,7 +11,7 @@
             init: function () {
                 var marker = this.el;
 
-                this.vid = document.querySelector("vid");
+                this.vid = document.querySelector("zelda");
 
                 marker.addEventListener('markerFound', function() {
                     this.vid.play();
@@ -33,12 +33,12 @@
     <a-scene mindar-image="imageTargetSrc: https://josemanuel9626.github.io/Looteart-MindAR/zelda-mindar/targets.mind;" vr-mode-ui="enabled: false" 
       device-orientation-permission-ui="enabled: false">
       <a-assets>
-      <video id="vid" src="zelda.mp4"></video>
+      <video id="zelda" src="zelda.mp4"></video>
       </a-assets>
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
       <a-entity mindar-image-target="targetIndex: 0">
       <a-video src="zelda.mp4" 
-	       preload="auto" id="vid" response-type="arraybuffer" loop
+	       preload="auto" id="zelda" response-type="arraybuffer" loop
                crossOrigin="anonymous" webkit-playsinline autoplay playsinline
 	       width="1"
 	       height="1.102" 
